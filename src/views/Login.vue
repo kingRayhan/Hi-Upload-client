@@ -1,5 +1,7 @@
 <template>
-  <div class="w-10/12 mx-auto md:w-6/12">
+  <div class="w-10/12 mx-auto mt-20 md:w-6/12">
+    <h1 class="my-5 text-xl">Login</h1>
+
     <form action="#" @submit.prevent="login">
       <div class="mb-3">
         <label class="inline-block mb-2 text-sm" for="email">
@@ -31,6 +33,13 @@
           Login
         </button>
       </div>
+
+      <p class="mt-5 text-sm text-gray-800">
+        Not joined yet?
+        <router-link :to="{ name: 'register' }" class="text-indigo-500">
+          Register now
+        </router-link>
+      </p>
     </form>
   </div>
 </template>

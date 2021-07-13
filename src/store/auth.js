@@ -18,7 +18,7 @@ const auth = {
   actions: {
     async fetchAuthenticatedUser({ commit }) {
       return axios
-        .get("api/user")
+        .get("api/auth/user")
         .then((res) => {
           commit("SET_USER", res.data);
           commit("SET_AUTHENTICATED", true);
@@ -30,11 +30,11 @@ const auth = {
     },
     async login({ dispatch }, credentials) {
       await axios.get("sanctum/csrf-cookie");
-      await axios.post("api/login", credentials);
+      await axios.post("api/auth/login", credentials);
       return dispatch("fetchAuthenticatedUser");
     },
     async logout({ dispatch }) {
-      await axios.post("api/logout");
+      await axios.post("api/auth/logout");
       return dispatch("fetchAuthenticatedUser");
     },
   },

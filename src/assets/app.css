@@ -5,3 +5,16 @@
 body {
   @apply border-t-4 border-indigo-500;
 }
+
+.filepond--file-wrapper {
+  @apply bg-indigo-500 rounded-md;
+}
+
+.filepond--credits {
+  @apply hidden;
+}
+
+.filepond--panel--root,
+.filepond--drop-label {
+  @apply text-gray-500 bg-gray-200 rounded-md;
+}

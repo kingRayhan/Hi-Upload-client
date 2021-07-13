@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
-import MyFiles from "../views/MyFiles.vue";
+import Upload from "../views/Upload.vue";
 import auth from "../middlewares/auth";
 import store from "../store";
 
@@ -14,9 +14,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/my-files",
-    name: "my-files",
-    component: MyFiles,
+    path: "/uploads",
+    name: "uploads",
+    component: Upload,
     meta: {
       middlewares: [auth],
     },

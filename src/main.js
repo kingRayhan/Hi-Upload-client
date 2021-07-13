@@ -3,6 +3,7 @@ import axios from "axios";
 import Root from "./Root.vue";
 import store from "./store";
 import router from "./router";
+import "filepond/dist/filepond.min.css";
 import "./assets/app.css";
 
 axios.defaults.withCredentials = true;

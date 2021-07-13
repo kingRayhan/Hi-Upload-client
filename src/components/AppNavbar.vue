@@ -14,10 +14,10 @@
 
       <li>
         <router-link
-          :to="{ name: 'my-files' }"
+          :to="{ name: 'uploads' }"
           class="inline-block p-3 text-sm text-gray-800"
         >
-          Your files
+          My Files
         </router-link>
       </li>
     </ul>
@@ -68,15 +68,17 @@
 
 <script setup>
 import { computed } from "vue";
+import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 const store = useStore();
+const router = useRouter();
 
 const authenticated = computed(() => store.state.auth.authenticated);
 const user = computed(() => store.state.auth.user);
 
-function logout() {
+async function logout() {
   if (!confirm("Sure to logout?")) return;
-
-  store.dispatch("auth/logout");
+  await store.dispatch("auth/logout");
+  router.push({ name: "login" });
 }
 </script>
