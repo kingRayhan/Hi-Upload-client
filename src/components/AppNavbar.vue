@@ -13,9 +13,12 @@
       </li>
 
       <li>
-        <a href="#" class="inline-block p-3 text-sm text-gray-800">
+        <router-link
+          :to="{ name: 'my-files' }"
+          class="inline-block p-3 text-sm text-gray-800"
+        >
           Your files
-        </a>
+        </router-link>
       </li>
     </ul>
 
