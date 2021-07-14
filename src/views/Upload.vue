@@ -1,6 +1,6 @@
 <template>
   <div class="mb-8 text-xl">
-    <AppUploader />
+    <AppUploader @fileUploaded="fileUploaded" />
   </div>
 
   <div>
@@ -24,9 +24,22 @@ import AppUploader from "../components/AppUploader.vue";
 
 import { useStore } from "vuex";
 import { onMounted, computed } from "vue";
+import axios from "axios";
 
 const store = useStore();
 const files = computed(() => store.getters["files/files"]);
+
+function fileUploaded(file) {
+  axios
+    .post("api/files", {
+      name: file.filename,
+      path: file.serverId,
+      size: file.fileSize,
+    })
+    .then((res) => {
+      console.log(res.data);
+    });
+}
 
 onMounted(() => {
   store.dispatch("files/getFiles");

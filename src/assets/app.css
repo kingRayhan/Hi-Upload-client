@@ -6,7 +6,7 @@ body {
   @apply border-t-4 border-indigo-500;
 }
 
-.filepond--file-wrapper {
+.filepond--item-panel {
   @apply bg-indigo-500 rounded-md;
 }
 
