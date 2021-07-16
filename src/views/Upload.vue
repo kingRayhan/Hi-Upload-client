@@ -37,7 +37,7 @@ function fileUploaded(file) {
       size: file.fileSize,
     })
     .then((res) => {
-      console.log(res.data);
+      store.commit("files/ADD_FILE", res.data.data);
     });
 }
 
